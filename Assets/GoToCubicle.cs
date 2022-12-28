@@ -1,7 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class GoToCubicle : GAction
 {
@@ -15,7 +14,6 @@ public class GoToCubicle : GAction
 
     public override bool PostPerform()
     {
-
         GWorld.Instance.GetWorld().ModifyState("TreatingPatient", 1);
         GWorld.Instance.AddCubicle(target);
         inventory.RemoveItem(target);

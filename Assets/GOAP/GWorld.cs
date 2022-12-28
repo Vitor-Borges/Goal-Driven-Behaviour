@@ -21,13 +21,14 @@ public sealed class GWorld
 
         if (cubes.Length > 0)
             world.ModifyState("FreeCubicle", cubes.Length);
+        Time.timeScale = 5;
     }
 
     private GWorld()
     {
     }
 
-    public void AddPatient (GameObject p)
+    public void AddPatient(GameObject p)
     {
         patients.Enqueue(p);
     }
@@ -37,7 +38,6 @@ public sealed class GWorld
         if (patients.Count == 0) return null;
         return patients.Dequeue();
     }
-
 
     public void AddCubicle(GameObject p)
     {
@@ -49,8 +49,6 @@ public sealed class GWorld
         if (cubicles.Count == 0) return null;
         return cubicles.Dequeue();
     }
-
-
 
     public static GWorld Instance
     {
