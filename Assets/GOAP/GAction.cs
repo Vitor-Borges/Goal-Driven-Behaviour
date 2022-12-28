@@ -1,9 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
-
 
 public abstract class GAction : MonoBehaviour
 {
@@ -44,7 +42,7 @@ public abstract class GAction : MonoBehaviour
             {
                 effects.Add(w.key, w.value);
             }
-
+            
     }
 
     public bool IsAchievable()

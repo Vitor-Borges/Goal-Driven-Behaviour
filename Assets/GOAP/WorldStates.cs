@@ -1,71 +1,61 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 [System.Serializable]
-    public class WorldState
+public class WorldState
+{
+    public string key;
+    public int value;
+}
+
+public class WorldStates
+{
+    public Dictionary<string, int> states;
+
+    public WorldStates()
     {
-        public string key;
-        public int value;
+        states = new Dictionary<string, int>();
     }
 
-    public class WorldStates
+    public bool HasState(string key)
     {
-        public Dictionary<string, int> states;
+        return states.ContainsKey(key);
+    }
 
-        public WorldStates()
+    void AddState(string key, int value)
+    {
+        states.Add(key, value);
+    }
+
+    public void ModifyState(string key, int value)
+    {
+        if (states.ContainsKey(key))
         {
-            states = new Dictionary<string, int > () ;
+            states[key] += value;
+            if (states[key] <= 0)
+                RemoveState(key);
         }
-
-        public bool HasState (string key)
-        {
-            return states.ContainsKey(key);
-        }
-
-        void AddState(string key, int value)
-        {
+        else
             states.Add(key, value);
-
-        }
-
-        public void ModifyState (string key, int value)
-        {
-            if (states.ContainsKey(key))
-            {
-                states[key] += value;
-                if (states[key] <= 0)
-                    RemoveState(key);
-            }
-
-            else
-                states.Add(key, value);
-        }
-
-        public void RemoveState (string key)
-        {
-            if (states.ContainsKey(key))
-                states.Remove(key);
-        }
-
-        public void SetState(string key, int value)
-        {
-         if (states.ContainsKey(key))
-                states[key] = value;
-            else
-                states.Add(key, value);
-        }
-
-        public Dictionary <string, int> GetStates()
-        {
-            return states;
-        }
-
-
-
-
     }
 
-    
+    public void RemoveState(string key)
+    {
+        if (states.ContainsKey(key))
+            states.Remove(key);
+    }
 
+    public void SetState(string key, int value)
+    {
+        if (states.ContainsKey(key))
+            states[key] = value;
+        else
+            states.Add(key, value);
+    }
+
+    public Dictionary<string, int> GetStates()
+    {
+        return states;
+    }
+}
