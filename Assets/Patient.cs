@@ -13,7 +13,7 @@ public class Patient : GAgent
 
         base.Start();
         SubGoal s2 = new SubGoal("isTreated", 1, true);
-        goals.Add(s1, 5);
+        goals.Add(s2, 5);
     }
 
 }

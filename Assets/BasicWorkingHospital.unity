@@ -1946,7 +1946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1182480219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3703,6 +3703,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592830986}
   m_CullTransparentMesh: 0
+--- !u!1 &1597969117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3191194391350855714, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
+  m_PrefabInstance: {fileID: 4695191399129213722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1597969125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597969117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81228f08e496e3d4dac502f7c52142f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Get Treated
+  cost: 1
+  target: {fileID: 0}
+  targetTag: Cubicle
+  duration: 0
+  preConditions:
+  - key: atHospital
+    value: 0
+  afterEffects:
+  - key: isTreated
+    value: 0
+  agent: {fileID: 0}
+  running: 0
 --- !u!1 &1646061454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4456,7 +4486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203887786870572470, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.427334
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 3203887786870572470, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4464,7 +4494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203887786870572470, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -55.4
+      value: -51.9
       objectReference: {fileID: 0}
     - target: {fileID: 3203887786870572470, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4493,6 +4523,14 @@ PrefabInstance:
     - target: {fileID: 3203887786870572470, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695191399491926586, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
+      propertyPath: afterEffects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695191399491926586, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
+      propertyPath: afterEffects.Array.data[1].key
+      value: atHospital
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fce119190bf0449caee6a98f2307710, type: 3}
